@@ -7,7 +7,6 @@ from datetime import datetime
 import pandas as pd
 import json
 
-#3lshan a3rf el time bta3 el execution
 t = datetime.now()
 
 parser = argparse.ArgumentParser()
@@ -15,14 +14,11 @@ parser.add_argument("dir", help = "Please enter the path of directory")
 parser.add_argument("-u", "--unix", action="store_true", dest="unixformat", default=False, help="keep the (time in) and (time out) in unix format")
 args = parser.parse_args()
 
-#hnbd2 nshof feh duplicates wla la
 checksums = {}
 duplicates = []
 
-#hgyb kol el files 2li fe el directory
 files = [item for item in listdir(args.dir) if (".json" in item)]
 
-#loop bt3dy 3la list el files
 for filename in files:
         #checksum =hashlib.sha256(filename.encode('utf-8')).hexdigest()
         # Append duplicate to a list if the checksum is found
