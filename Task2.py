@@ -36,7 +36,6 @@ for filename in files:
             duplicates.append(filename)
         checksums[checksum] = filename
 
-#if len(duplicates)>0:
 print(f"Found Duplicates: {duplicates}")
 
 for i in duplicates:
@@ -86,8 +85,8 @@ for filename in files:
         print('there are {} rows transformed from file:{}'.format(df.shape[0], args.dir+"/"+filename)) 
         
         #to save the files
-        outputfile=filename.replace('.json',' ')
-        df.to_csv('D:\Task2\\target\\'+outputfile+'.csv')
+        file = filename.replace('.json',' ')
+        df.to_csv('D:\Task2\\target\\'+file+'.csv')
 	
 	
 #print the execution time of the script
